@@ -1,0 +1,1069 @@
+ILPHOTX SHOP — MERCHANT DASHBOARD
+Tugiye gutegura Merchant Dashboard mu buryo bwa professional Multi-Vendor E-commerce Marketplace, dukoresheje:
+- Next.js (App Router)
+- PostgreSQL
+- Prisma ORM
+- Redis
+Merchant ni umucuruzi wemejwe na Super Admin cyangwa Admin. Azajya agira shop ye bwite muri ILPHOTX SHOP, ashyiremo ibicuruzwa, acunge orders, abone amafaranga yinjije, acunge abakozi be, kandi akurikirane uko abakiriya basura shop ye.
+
+Itegeko rikomeye: Merchant azajya abona amakuru ajyanye na shop ye gusa. Ntabwo azajya abona ibicuruzwa, orders, staff cyangwa amafaranga by'abandi merchants.
+1. Merchant Dashboard — Main Layout
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dashboard izaba ifite ibice bitanu:
+1. Top Navbar: Search, notifications, messages, profile.
+2. Main Sidebar: Ibice byose umucuruzi yemerewe gukoresha.
+3. Sub-sidebar: Ibyo buri gice kigizwe na byo.
+4. Main Content: Page iri gukorerwaho.
+5. Shop Quick Panel: Shop status, views, orders n'ibikorwa byihuse.
+Layout y'uko izaba imeze
+┌──────────────────────────────────────────────────────────────┐
+│ ILPHOTX SHOP   Search...     Messages  Notifications Profile │
+├──────────────┬───────────────────────────────────────────────┤
+│ MAIN SIDEBAR │             MERCHANT DASHBOARD                │
+│              │                                               │
+│ Dashboard    │ Welcome back, Merchant                        │
+│ My Shop      │                                               │
+│ Products     │ ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌───────┐│
+│ Orders       │ │Products │ │ Orders  │ │Revenue  │ │ Views ││
+│ Inventory    │ └─────────┘ └─────────┘ └─────────┘ └───────┘│
+│ Payments     │                                               │
+│ Analytics    │          Sales & Revenue Charts               │
+│ Staff        │                                               │
+│ Messages     │          Recent Orders                         │
+│ Audit Logs   │          Top Selling Products                  │
+│ Settings     │                                               │
+└──────────────┴───────────────────────────────────────────────┘
+
+
+
+2. MERCHANT MAIN SIDEBAR NA SUB-SIDEBAR
+Iyi ni structure nakugira inama yo gukoresha. Buri Main Sidebar izajya igira submenu zayo, kandi buri submenu izajya iba page yihariye.
+2.1 Dashboard Overview
+Default landing page
+Iyo Merchant amaze kwinjira muri system, ahita ajya kuri:
+
+/merchant/dashboard
+
+
+
+
+
+
+
+
+dribbble.com
+
+
+Dashboard Statistics Cards
+245
+Total Products
+
+Ibicuruzwa bya shop
+
+
+128
+Total Orders
+
+Orders zakiriwe
+
+
+4.5M
+Total Sales
+
+Amafaranga yagurishijweho
+
+
+8,450
+Product Views
+
+Abarebye ibicuruzwa
+
+
+96
+Completed Orders
+
+Orders zarangiye
+
+
+12
+Pending Orders
+
+Orders zitegereje
+
+
+
+Imibare ni urugero rwo kwerekana uko dashboard izaba iteye.
+Dashboard Charts
+Merchant azajya abona charts zijyanye n'ubucuruzi bwe gusa:
+1. Sales Overview — amafaranga yagurishije buri munsi, cyumweru, kwezi n'umwaka.
+2. Orders Overview — uko orders ziyongera.
+3. Product Views — ibicuruzwa birebwa cyane.
+4. Best Selling Products — ibicuruzwa bigurwa cyane.
+5. Revenue Overview — amafaranga yinjije.
+6. Customer Growth — abakiriya baguze muri shop.
+7. Payment Status — ubwishyu bwemejwe n'ubutaremezwa.
+8. Inventory Overview — ibicuruzwa biri muri stock.
+Recent Orders
+Table izajya igaragaza:
+Order ID	Customer	Product	Amount	Status
+ORD-001	Customer A	Laptop	500K	Paid
+ORD-002	Customer B	Phone	250K	Pending
+ORD-003	Customer C	Shoes	45K	Completed
+
+Merchant azajya akanda order akabona amakuru yose ayerekeye.
+
+2.2 My Shop
+MAIN SIDEBAR: My Shop
+
+
+
+
+
+
+
+
+
+linkia.linkia.pe
+
+
+MY SHOP
+Sub-sidebar
+ Shop Overview
+
+ Shop Profile
+
+ Shop Logo & Banner
+
+ Shop Description
+
+ Shop Location
+
+ Business Hours
+
+ Public Shop Preview
+
+ Verification Status
+
+
+Aha Merchant azajya acunga uko shop ye igaragara muri ILPHOTX SHOP.
+
+Shop Profile izaba ifite:
+- Shop Name.
+- Shop Logo.
+- Shop Banner.
+- Business Category.
+- Business Description.
+- Shop Phone Number.
+- Shop Email.
+- Country.
+- Province.
+- District.
+- Sector.
+- Cell.
+- Village.
+- Map Coordinates.
+- Business Hours.
+Azajya abona buto ya View My Public Shop, akareba uko abakiriya babona shop ye muri Our Market.
+
+Ibyo ahinduye kuri Shop Profile bishobora gusaba re-verification niba bihinduye amakuru y'ingenzi y'ubucuruzi.
+2.3 Products Management
+One of the most important modules
+MAIN SIDEBAR: Products
+
+
+
+
+
+
+
+
+
+dribbble.com
+
+
+PRODUCT MANAGEMENT
+Sub-sidebar
+ All Products
+
+ Add New Product
+
+ Published Products
+
+ Pending Approval
+
+ Scheduled Products
+
+ Draft Products
+
+ Rejected Products
+
+ Hidden Products
+
+ Out of Stock
+
+ Featured Products
+
+ Archived Products
+
+ Product Performance
+
+
+Add New Product
+Iyo Merchant akanze Add New Product azabona form irambuye.
+
+
+
+
+
+
+
+
+dribbble.com
+
+
+Form izaba igizwe n'ibi bice:
+
+A. Basic Information
+- Product Name.
+- Product SKU.
+- Category.
+- Subcategory.
+- Brand.
+- Product Description.
+B. Pricing Information
+- Regular Price.
+- Discount Price.
+- Minimum Price.
+- Maximum Price.
+- Currency.
+Ku bicuruzwa bifite igiciro gihindagurika, Merchant ashobora gushyiraho price range. Ariko niba ari igicuruzwa gifite igiciro kimwe, akoresha Regular Price.
+
+C. Product Images
+- Main Product Image.
+- Supporting Image 1.
+- Supporting Image 2.
+Main Image ni yo izajya igaragara muri Our Market product card.
+
+D. Inventory Information
+- Stock Quantity.
+- SKU.
+- Availability.
+- Low Stock Alert.
+E. Publication Settings
+- Publish Now.
+- Schedule Publication.
+- Save as Draft.
+Iyo ahisemo Schedule Publication, azabona:
+- Publication Date.
+- Publication Time.
+- Timezone.
+F. Additional Information
+- Product Condition (New / Used).
+- Product Warranty.
+- Product Specifications.
+- Return Policy.
+- Delivery Information.
+Product status workflow
+1. Merchant akora product.
+2. Product ijya muri Draft cyangwa Pending Approval.
+3. Admin cyangwa Super Admin arayisuzuma niba approval isabwa.
+4. Iyo yemerewe, ihita igaragara muri Our Market cyangwa igategereza scheduled date.
+5. Iyo yanze, Merchant abona impamvu yo kwangwa, agahindura akongera akohereza.
+
+Icyitonderwa: Super Admin ni we uzagena muri System Settings niba product yose igomba kubanza kwemezwa cyangwa niba merchant wemerewe ashobora kuyitangaza ako kanya.
+2.4 Order Management
+MAIN SIDEBAR: Orders
+
+
+
+
+
+
+
+
+
+dribbble.com
+
+
+ORDER MANAGEMENT
+Sub-sidebar
+ All Orders
+
+ New Orders
+
+ Pending Confirmation
+
+ Payment Verified
+
+ Processing Orders
+
+ Ready for Delivery
+
+ Shipped Orders
+
+ Completed Orders
+
+ Cancelled Orders
+
+ Return Requests
+
+ Order Disputes
+
+
+Iyo Merchant akoze order azajya abona:
+- Order Number.
+- Customer Name.
+- Customer Phone.
+- Product Name.
+- Product Image.
+- Quantity.
+- Unit Price.
+- Total Amount.
+- Payment Status.
+- Delivery Address.
+- Order Date.
+- Order Timeline.
+Order workflow
+1. Customer agura product.
+2. Merchant abona notification ya New Order.
+3. System imwereka niba payment yemejwe.
+4. Merchant yemera gutunganya order.
+5. Ashyira order muri Processing.
+6. Iyo yiteguye, agashyira Ready for Delivery.
+7. Delivery ikimara gukorwa, agashyira Shipped cyangwa Delivered bitewe n'uburyo bwo gutanga.
+8. Customer amaze kwemeza ko yakiriye product, order igahinduka Completed.
+Merchant ntazajya yemeza payment ubwe igihe ILPHOTX SHOP ari yo iyigenzura. Azajya abona status yemejwe na payment service.
+2.5 Inventory Management
+MAIN SIDEBAR: Inventory Management
+
+
+
+
+
+
+
+
+
+app.kipify.io
+
+
+INVENTORY MANAGEMENT
+Sub-sidebar
+ Stock Overview
+
+ All Inventory
+
+ Low Stock
+
+ Out of Stock
+
+ Stock Adjustments
+
+ Stock Movement History
+
+ Stock Alerts
+
+
+Aha Merchant azajya acunga umubare w'ibicuruzwa afite.
+
+Urugero:
+- Product A: 25 units.
+- Product B: 5 units.
+- Product C: 0 units.
+Iyo igicuruzwa kigeze kuri Low Stock Alert, system imwoherereza notification.
+
+Iyo umukiriya aguze igicuruzwa:
+- Stock iragabanywa hakurikijwe quantity yemejwe.
+- Iyo igicuruzwa kigeze kuri zero, gihinduka Out of Stock.
+- Iyo hari cancellation cyangwa refund yemerera gusubiza igicuruzwa muri stock, inventory iravugururwa.
+Tuzakoresha stock reservation na database transactions kugira ngo abakiriya benshi batagura unit imwe icyarimwe.
+2.6 Payments & Earnings
+MAIN SIDEBAR: Payments & Earnings
+
+
+
+
+
+
+
+
+
+themeforest.net
+
+
+PAYMENTS & EARNINGS
+Sub-sidebar
+ Earnings Overview
+
+ Total Earnings
+
+ Pending Earnings
+
+ Available Balance
+
+ Payout Requests
+
+ Payout History
+
+ Transaction History
+
+ Platform Commission
+
+ Financial Statements
+
+ Payout Account
+
+
+Earnings Overview
+Merchant azajya abona:
+- Total Sales.
+- Gross Earnings.
+- Platform Commission.
+- Refund Deductions.
+- Tax Deductions, aho bireba merchant.
+- Pending Earnings.
+- Available Balance.
+- Total Paid Out.
+Urugero:
+Ibisobanuro	Amafaranga
+Gross Product Sales	1,000,000 RWF
+Platform Commission	50,000 RWF
+Refunds	20,000 RWF
+Net Merchant Earnings	930,000 RWF
+
+Iyi ni urugero rwa 5% commission. Amafaranga nyayo azajya akurikiza configuration ya Super Admin.
+Payout Account
+Merchant azajya abasha kureba konti yanditseho kugira ngo amafaranga azajya yishyurwa kuri yo.
+- Bank Name.
+- Account Holder.
+- Account Number.
+- Branch.
+- Mobile Money Number.
+Guhindura payout account bizajya bisaba verification, 2FA n'amateka y'uwahinduye amakuru. Niba settlement itegereje, system ishobora gusaba ko ihinduka ribanza kwemezwa.
+
+2.7 Product Analytics
+MAIN SIDEBAR: Product Analytics
+
+
+
+
+
+
+
+
+
+apps.shopify.com
+
+
+PRODUCT ANALYTICS
+Sub-sidebar
+ Sales Analytics
+
+ Product Views
+
+ Trending Products
+
+ Best Selling Products
+
+ Most Wishlisted Products
+
+ Add to Cart Analytics
+
+ Conversion Rate
+
+ Customer Insights
+
+
+Merchant azajya abona ibicuruzwa abantu bareba cyane, ibicuruzwa bashyira muri cart ariko ntibagure, n'ibigurishwa cyane.
+
+Urugero:
+Product	Views	Sales
+Laptop HP	2,500	45
+Samsung Phone	1,800	32
+Shoes	1,200	20
+
+Aya makuru azajya amufasha kumenya ibicuruzwa agomba kongera stock cyangwa kwamamaza.
+2.8 Marketing & Promotions
+MAIN SIDEBAR: Marketing & Promotions
+
+MARKETING & PROMOTIONS
+Sub-sidebar
+ My Coupons
+
+ Product Discounts
+
+ Scheduled Campaigns
+
+ Featured Product Requests
+
+ Shop Banners
+
+ Special Offers
+
+ Promotion Analytics
+
+
+Merchant azajya:
+- Gukora discount ku bicuruzwa bye.
+- Gushyiraho coupon codes.
+- Gushyiraho igihe promotion itangirira n'igihe irangirira.
+- Gusaba ko product ye iba Featured.
+- Kureba uko promotion ze zakoze.
+Platform-wide coupons na global promotions bizakomeza gucungwa na Super Admin.
+2.9 Customers Management
+MAIN SIDEBAR: Customers
+
+CUSTOMER MANAGEMENT
+Sub-sidebar
+ My Customers
+
+ Repeat Customers
+
+ New Customers
+
+ Customer Purchase History
+
+ Customer Conversations
+
+ Customer Reviews
+
+
+Merchant azajya abona abakiriya baguze ibicuruzwa bye, ariko ntazajya abona amakuru y'ibanga y'abakiriya batarakorana na we.
+
+Azajya abona:
+- Customer Name.
+- Phone Number, igihe bikenewe mu gutunganya order.
+- Orders Count.
+- Total Purchases.
+- Last Purchase.
+- Customer Reviews.
+2.10 Staff Management
+MAIN SIDEBAR: Staff Management
+
+
+
+
+
+
+
+
+
+dribbble.com
+
+
+STAFF MANAGEMENT
+Sub-sidebar
+ All Staff
+
+ Invite Staff
+
+ Pending Invitations
+
+ Roles & Permissions
+
+ Custom Role Builder
+
+ Active Staff
+
+ Suspended Staff
+
+ Staff Activity History
+
+
+Merchant azajya abasha guha abakozi be roles zitandukanye.
+Default Staff Roles
+Role	Uburenganzira
+Shop Manager	Gucunga ibikorwa bya shop
+Product Manager	Products na stock
+Sales Manager	Sales na orders
+Accountant	Earnings na financial reports
+Order Manager	Gucunga orders
+Inventory Manager	Stock
+Customer Support	Gufasha abakiriya
+Custom Role	Merchant yihitiyemo
+
+Custom Role Builder
+Merchant azajya abasha kurema role nshya akayita uko ashaka.
+
+Urugero: Senior Sales Officer
+
+Akayigenera permissions:
+- View Orders.
+- Update Orders.
+- View Products.
+- Manage Stock.
+- View Sales Reports.
+- Manage Customers.
+Uburyo bwo kubaka permissions: Tuzakoresha granular permissions. Urugero, products.create, products.update, orders.view, orders.update, staff.invite, finance.view.
+
+Ntabwo staff azajya ahabwa permission yo guhindura bank account cyangwa kwemeza settlement kubera ko ari Manager. Ibyo bizajya bigenwa ukwabyo kandi ibikorwa bikomeye bisabe confirmation.
+Staff Invitation Workflow
+1. Merchant akanda Invite Staff.
+2. Yandika email y'umukozi.
+3. Ahitamo role cyangwa custom role.
+4. System yohereza invitation link kuri email.
+5. Umukozi afungura link agashyiraho password.
+6. Yuzuza profile ye.
+7. System imuha dashboard ijyanye na permissions ze.
+
+Invitation izajya igira expiration time, kandi link ikoreshwe rimwe gusa. Staff akuwe muri shop, access ye igahita ihagarara.
+2.11 Messages & Support
+MAIN SIDEBAR: Messages & Support
+
+
+
+
+
+
+
+
+
+apps.shopify.com
+
+
+MESSAGES & SUPPORT
+Sub-sidebar
+ All Messages
+
+ Customer Chats
+
+ Support Tickets
+
+ Admin Conversations
+
+ Super Admin Support
+
+ Notifications
+
+ Help Center
+
+
+Merchant azajya abasha kuganira n'abakiriya be kuri product runaka cyangwa order runaka.
+
+Chat izajya igira:
+- Text Messages.
+- Image Attachments.
+- Product References.
+- Order References.
+- Read Receipts.
+- Typing Indicators.
+- Online Status.
+- Conversation History.
+Iyo afite ikibazo atabashije gukemura, azajya afungura Support Ticket ayohereze kuri Admin cyangwa Super Admin.
+2.12 Audit Logs
+MAIN SIDEBAR: Audit Logs
+
+
+
+
+
+
+
+
+
+codecanyon.net
+
+
+AUDIT LOGS
+Sub-sidebar
+ All Activities
+
+ Login History
+
+ Product Activities
+
+ Order Activities
+
+ Financial Activities
+
+ Staff Activities
+
+ Settings Changes
+
+ Active Sessions
+
+
+Merchant azajya abona ibikorwa by'abakozi be bose, harimo:
+- Uwinjiye muri system.
+- Igihe yinjiye.
+- IP Address.
+- Device.
+- Icyo yakoze.
+- Module yakoreyemo.
+- Old Value.
+- New Value.
+- Success cyangwa Failed.
+Urugero:
+Staff	Action	Time
+John	Added product	09:30
+Peter	Updated stock	10:15
+Alice	Processed order	11:00
+David	Changed product price	11:30
+
+Audit Logs zizajya zisomwa gusa, ntizibe editable na Merchant cyangwa Staff.
+2.13 My Profile
+MAIN SIDEBAR: My Profile
+
+MY PROFILE
+ Personal Information
+
+ Email & Phone
+
+ Address
+
+ Business Documents
+
+ Verification Status
+
+
+Aha ni ho Merchant azajya ahindura amakuru ye bwite, kureba verification status no kuvugurura documents z'ubucuruzi.
+2.14 My Settings
+MAIN SIDEBAR: My Settings
+
+MY SETTINGS
+ Notification Settings
+
+ Personal Appearance
+
+ Language Preferences
+
+ Change Password
+
+ Two-Factor Authentication
+
+ Device & Session Management
+
+ Email Preferences
+
+
+Merchant azajya ahindura personal settings ze, ariko ntazahindura global system settings za ILPHOTX SHOP.
+2.15 Help & Support
+HELP & SUPPORT
+ Documentation
+
+ Contact Support
+
+ My Support Tickets
+
+ Support Phone
+
+ Support Email
+
+ Frequently Asked Questions
+
+
+Support Phone na Support Email bizajya biva muri System Settings za Super Admin. Merchant ntazajya abihindura.
+
+3. Merchant Sidebar — Final Structure
+Dore uko sidebar yose izajya itondekwa muri system:
+
+ILPHOTX SHOP
+
+MERCHANT
+
+
+MAIN NAVIGATION
+Dashboard
+
+
+My Shop
+
+
+Products
+
+All Products · Add New Product · Published · Pending Approval · Scheduled · Drafts · Rejected · Hidden · Out of Stock · Featured · Archived · Performance
+
+
+Orders
+
+All Orders · New Orders · Pending Confirmation · Payment Verified · Processing · Ready for Delivery · Shipped · Completed · Cancelled · Returns · Disputes
+
+
+Inventory Management
+
+Stock Overview · All Inventory · Low Stock · Out of Stock · Stock Adjustments · Stock Movement · Alerts
+
+
+Payments & Earnings
+
+Earnings Overview · Total Earnings · Pending Earnings · Available Balance · Payout Requests · Payout History · Transactions · Commission · Financial Statements · Payout Account
+
+
+Product Analytics
+
+Sales Analytics · Product Views · Trending · Best Sellers · Wishlists · Add to Cart · Conversion Rate · Customer Insights
+
+
+Marketing & Promotions
+
+Coupons · Discounts · Campaigns · Featured Requests · Banners · Special Offers · Analytics
+
+
+Customers
+
+My Customers · Repeat Customers · New Customers · Purchase History · Conversations · Reviews
+
+
+Staff Management
+
+All Staff · Invite Staff · Pending Invitations · Roles & Permissions · Custom Role Builder · Active Staff · Suspended Staff · Activity History
+
+
+Messages & Support
+
+All Messages · Customer Chats · Support Tickets · Admin Conversations · Super Admin Support · Notifications · Help Center
+
+
+Audit Logs
+
+All Activities · Login History · Product Activities · Order Activities · Financial Activities · Staff Activities · Settings Changes · Active Sessions
+
+
+My Profile
+
+Personal Information · Email & Phone · Address · Business Documents · Verification Status
+
+
+My Settings
+
+Notifications · Appearance · Language · Password · 2FA · Devices & Sessions · Email Preferences
+
+Help & Support
+
+Documentation · Contact Support · Tickets · Support Phone · Support Email · FAQs
+
+
+
+ Logout
+
+
+4. Merchant Roles & Permissions — uburyo dashboard izajya ihinduka bitewe n'umukozi
+Ikintu cy'ingenzi ni uko abakozi bose batazajya babona sidebar imwe.
+
+Urugero:
+Staff Role	Sidebar azajya abona
+Shop Manager	Dashboard, Shop, Products, Orders, Inventory, Customers, Staff
+Product Manager	Dashboard, Products, Inventory, Product Analytics
+Accountant	Dashboard, Payments, Earnings, Financial Statements
+Order Manager	Dashboard, Orders, Customers, Delivery
+Inventory Manager	Dashboard, Products, Inventory
+Customer Support	Dashboard, Customers, Messages, Support
+
+Merchant Owner ni we uzajya agira full control kuri shop ye.
+
+Custom roles zizajya zigenwa na Merchant.
+
+Uburyo bwiza bwo kubaka ibi: Sidebar izajya ikorwa dynamically ishingiye kuri permissions z'umuntu winjiye, ariko backend na yo izajya igenzura buri API request. Nta mukozi uzashobora gukoresha URL atemerewe.
+5. Merchant Dashboard — Database Architecture
+Kubera ko dukoresha PostgreSQL na Prisma, tugomba kubaka uburyo buri merchant agira amakuru ye bwite.
+
+Dore models z'ingenzi:
+Prisma Model	Icyo izajya ibika
+User	Abakoresha
+MerchantProfile	Amakuru y'umucuruzi
+Shop	Shop y'umucuruzi
+MerchantStaff	Abakozi
+Role	Roles
+Permission	Permissions
+StaffInvitation	Invitations
+Product	Ibicuruzwa
+ProductImage	Amafoto
+Category	Categories
+Inventory	Stock
+StockMovement	Stock history
+ProductView	Product views
+Order	Orders
+OrderItem	Ibicuruzwa biri muri order
+Payment	Payments
+MerchantEarning	Amafaranga merchant agomba guhabwa
+Payout	Amafaranga yishyuwe merchant
+Conversation	Ibiganiro
+Message	Ubutumwa
+Notification	Notifications
+AuditLog	Amateka y'ibikorwa
+Coupon	Discounts
+Review	Reviews
+
+Multi-tenant security
+Buri product, order, inventory record, staff record na financial record igomba kugira shopId cyangwa indi ownership reference ikwiye.
+
+Urugero:
+const products = await prisma.product.findMany({
+  where: {
+    shopId: authenticatedUser.shopId
+  }
+});
+
+
+Ntituzemera ko shopId itangwa n'uko user yanditse muri frontend ngo ni yo yonyine igenzura access. Backend izajya iyikura muri authenticated session kandi igenzure ownership kuri buri request.
+Redis ikoreshwa he?
+Redis Feature	Uko izafasha
+Dashboard Cache	Kwihutisha dashboard
+Product Cache	Kwihutisha products
+Session Cache	Gucunga sessions
+Notification Queue	Kohereza notifications
+BullMQ Jobs	Scheduled publishing
+Rate Limiting	Kurinda API abuse
+Real-time Events	Notifications na chat
+
+Ntabwo tuzabika permanent sales, payments cyangwa audit logs muri Redis gusa.
+6. Uko Merchant Dashboard izajya ikora mu mikorere ya buri munsi
+Merchant Daily Workflow
+1. Merchant Login
+   
+   Yinjira muri account ye, system ikagenzura role na permissions.
+2. Dashboard Overview
+   
+   Areba sales, orders, products, stock na notifications.
+3. Manage Products
+   
+   Ashyiraho ibicuruzwa bishya cyangwa agahindura ibyari bisanzweho.
+4. Receive Orders
+   
+   Abona orders nshya z'abakiriya.
+5. Process Orders
+   
+   Ategurira abakiriya ibyo baguze.
+6. Track Earnings
+   
+   Areba amafaranga yinjije n'ategereje settlement.
+7. Manage Staff
+   
+   Aha abakozi inshingano kandi akurikirana ibikorwa byabo.
+8. Review Analytics
+   
+   Areba ibicuruzwa bigurishwa cyane n'ibikeneye kwamamazwa.
+
+7. Development Folder Structure ya Merchant muri Next.js
+Tuzakoresha App Router kugira ngo buri module igire page na layout byayo.
+src/
+├── app/
+│   └── merchant/
+│       ├── layout.tsx
+│       ├── dashboard/
+│       │   └── page.tsx
+│       │
+│       ├── shop/
+│       │   ├── page.tsx
+│       │   ├── profile/
+│       │   ├── branding/
+│       │   └── location/
+│       │
+│       ├── products/
+│       │   ├── page.tsx
+│       │   ├── add/
+│       │   ├── published/
+│       │   ├── pending/
+│       │   ├── scheduled/
+│       │   └── [productId]/
+│       │
+│       ├── orders/
+│       │   ├── page.tsx
+│       │   └── [orderId]/
+│       │
+│       ├── inventory/
+│       ├── payments/
+│       ├── analytics/
+│       ├── marketing/
+│       ├── customers/
+│       ├── staff/
+│       ├── messages/
+│       ├── audit-logs/
+│       ├── profile/
+│       ├── settings/
+│       └── support/
+│
+├── components/
+│   └── merchant/
+│       ├── MerchantSidebar.tsx
+│       ├── MerchantHeader.tsx
+│       ├── MerchantLayout.tsx
+│       ├── MerchantDashboardCards.tsx
+│       ├── SalesChart.tsx
+│       ├── OrdersTable.tsx
+│       ├── ProductForm.tsx
+│       ├── ProductTable.tsx
+│       ├── StaffManager.tsx
+│       └── PermissionGuard.tsx
+│
+├── services/
+│   ├── merchant.service.ts
+│   ├── product.service.ts
+│   ├── order.service.ts
+│   ├── inventory.service.ts
+│   ├── payment.service.ts
+│   └── analytics.service.ts
+│
+└── lib/
+    ├── prisma.ts
+    ├── redis.ts
+    ├── auth.ts
+    └── permissions.ts
+
+
+8. Ibyo tugomba gushyira imbere mu kubaka Merchant Dashboard
+Priority	Module	Impamvu
+1	Dashboard Foundation	Ishingiro rya dashboard
+2	My Shop	Gucunga shop
+3	Product Management	Gushyiraho ibicuruzwa
+4	Order Management	Kwakira no gutunganya orders
+5	Inventory	Gucunga stock
+6	Payments & Earnings	Gukurikirana amafaranga
+7	Staff & Permissions	Gucunga abakozi
+8	Analytics	Gusesengura ubucuruzi
+9	Communication	Kuvugana n'abakiriya
+10	Audit & Security	Umutekano n'amateka
+
+Merchant Dashboard — Final Architecture
+Recommended structure
+Main Sidebar: 15 navigation sections zirimo Dashboard, Shop, Products, Orders, Inventory, Payments, Analytics, Marketing, Customers, Staff, Messages, Audit Logs, Profile, Settings na Support.
+
+Sub-sidebar: Buri module igira submenu zayo.
+
+Access Control: Owner, custom roles na staff permissions.
+
+Database: Buri merchant agira shopId, amakuru ye akagenzurwa kuri backend.
+
+Performance: Redis caching, PostgreSQL indexing na pagination.
+
+Security: Audit Logs, 2FA, secure invitations na payment protection.
+
+Inama yanjye: Merchant Dashboard tuyubake ku buryo umucuruzi abasha gucunga ubucuruzi bwe bwose atavuye muri ILPHOTX SHOP: gushyiraho products, kwakira orders, gucunga staff, gukurikirana amafaranga no kuvugana n'abakiriya.
+
+Intambwe ikurikira nziza ni ugukora Merchant Dashboard UI Foundation muri Next.js: Sidebar, Sub-sidebar, Header, Dashboard Cards na Charts, hanyuma tugatangira guhuza buri module na Prisma na PostgreSQL.

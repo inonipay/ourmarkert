@@ -1,0 +1,45 @@
+{
+  "name": "ilphotexshop",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "db:seed": "node --env-file=.env --import tsx prisma/seed.ts",
+    "db:set-role": "node --env-file=.env --import tsx prisma/set-user-role.ts",
+    "db:create-super-admin": "node --env-file=.env --import tsx prisma/create-super-admin.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.3",
+    "@upstash/ratelimit": "^2.2.1",
+    "@upstash/redis": "^1.41.0",
+    "bcryptjs": "^3.0.3",
+    "fflate": "^0.8.2",
+    "jspdf": "^4.2.1",
+    "lucide-react": "^0.468.0",
+    "next": "16.4.6",
+    "next-auth": "^4.24.15",
+    "qrcode": "^1.5.4",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "4.3.3",
+    "@types/node": "^20",
+    "@types/qrcode": "^1.5.6",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.6",
+    "prisma": "^6.19.3",
+    "tailwindcss": "4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^5"
+  },
+  "overrides": {
+    "deepmerge-ts": "^8.0.2"
+  }
+}

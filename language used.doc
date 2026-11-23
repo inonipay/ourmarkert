@@ -1,0 +1,17 @@
+turakoresha ,next.js ,na tailwind css,na postegre ,redis,kandi bibe bimeze neza bibe ari reusable ,kandi ujye urema buri file yaburi kintu  kandi ukoreshe ukoreshe security zose kandi 
+next.js ikore kubice byombi yaba kuri frontend ndetse na backend 
+
+
+ Umutekano wa Code muri Next.js (Backend & Frontend)
+
+• Koresha ORM (Prisma cyangwa Drizzle): Niba utari gukoresha Supabase Client gusa, koresha Prisma cyangwa Drizzle ORM mu kwandika queries za PostgreSQL kugira ngo wirinde ibitero bya SQL Injection.
+• Data Access Layer (DAL): Kora folder yihariye (urugero: src/data/) ibamo code zose zivugana na Supabase. Mbere yo gutanga amakuru yose muri iyo folder, banza ugenzure niba umukoresha yinjiye kandi afite uburenganzira.
+• Zod Validation: Koresha Zod kuri buri Server Action cyangwa API Route kugira ngo usuzume amakuru umukoresha yohereje mbere yo kuyageza muri PostgreSQL.
+
+5. Kurinda Ibinyabiziga byinshi n'Ibitero (Rate Limiting & Storage)
+
+• Rate Limiting: Koresha Upstash Redis kuri Vercel kugira ngo uhagarike umuntu ugerageza kwinjira (Login) inshuro nyinshi cyangwa wohereza ibisabwa byinshi mu isegonda rimwe.
+• Supabase Storage Policies: Niba abakoresha bazajya bashyira amafoto cyangwa amadosiye (Uploads) kuri Supabase Storage, shyiraho Storage Policies zigenzura ubwoko bw'amadosiye yemerewe, ubunini bwayo (urugero: kutarenza 5MB), n'uwemerewe kuyareba.
+
+
+amakuru age avamuridatabase ,kandihabeho language change  yaba french,english,ikinyarwanda ,kandi default ibe english

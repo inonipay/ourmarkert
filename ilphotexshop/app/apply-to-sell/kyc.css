@@ -1,0 +1,193 @@
+.merchant-kyc-page {
+  min-height: 100vh;
+  background: #f5f8fc;
+  color: #23384e;
+}
+
+.merchant-kyc-header {
+  display: flex;
+  min-height: 62px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e1e8f0;
+  background: #fff;
+  padding: 0 max(20px, calc((100% - 1060px) / 2));
+}
+
+.merchant-kyc-header a {
+  color: #174f91;
+  font-size: 16px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.merchant-kyc-header span {
+  color: #66788c;
+  font-size: 14px;
+}
+
+.merchant-kyc-main {
+  width: min(100% - 32px, 760px);
+  margin: 40px auto;
+}
+
+.merchant-kyc-intro {
+  margin-bottom: 22px;
+}
+
+.merchant-kyc-kicker {
+  color: #174f91;
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+}
+
+.merchant-kyc-intro h1 {
+  margin: 8px 0;
+  color: #18395e;
+  font-size: clamp(26px, 4vw, 34px);
+}
+
+.merchant-kyc-intro p,
+.merchant-kyc-status-card p {
+  color: #62758a;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.merchant-kyc-form,
+.merchant-kyc-status-card {
+  display: grid;
+  gap: 16px;
+  border: 1px solid #e1e8f0;
+  border-radius: 14px;
+  background: #fff;
+  padding: clamp(18px, 4vw, 30px);
+  box-shadow: 0 12px 35px rgb(23 53 89 / 6%);
+}
+
+.merchant-kyc-form label {
+  display: grid;
+  gap: 7px;
+  color: #344b63;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.merchant-kyc-form input,
+.merchant-kyc-form textarea {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid #d5e0eb;
+  border-radius: 8px;
+  background: #fff;
+  color: #263d54;
+  padding: 9px 11px;
+  font: inherit;
+  font-size: 14px;
+}
+
+.merchant-kyc-form textarea {
+  resize: vertical;
+}
+
+.merchant-kyc-form input[type="file"] {
+  min-height: 48px;
+  padding: 7px;
+}
+
+.merchant-kyc-form small {
+  color: #74859a;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.merchant-kyc-privacy-note,
+.merchant-kyc-review-note {
+  margin: 0;
+  border-left: 3px solid #e5b042;
+  background: #fff9eb;
+  color: #665735;
+  padding: 11px 13px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.merchant-kyc-primary {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 8px;
+  background: #174f91;
+  color: #fff;
+  padding: 0 16px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 650;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.merchant-kyc-primary:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.merchant-kyc-message {
+  min-height: 20px;
+  margin: 0;
+  color: #526a82;
+  font-size: 14px;
+}
+
+.merchant-kyc-rejection {
+  display: grid;
+  gap: 5px;
+  border: 1px solid #f1d4ce;
+  border-radius: 8px;
+  background: #fff7f5;
+  color: #8d4034;
+  padding: 12px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.merchant-kyc-status-card h2 {
+  margin: 0;
+  font-size: 21px;
+}
+
+.merchant-kyc-status {
+  width: fit-content;
+  border-radius: 18px;
+  background: #fff3d4;
+  color: #80621e;
+  padding: 5px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.merchant-kyc-status.is-approved {
+  background: #edf7f0;
+  color: #28714d;
+}
+
+.merchant-kyc-loading {
+  padding: 40px;
+  color: #62758a;
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  .merchant-kyc-header {
+    padding: 0 16px;
+  }
+
+  .merchant-kyc-main {
+    margin: 24px auto;
+  }
+}

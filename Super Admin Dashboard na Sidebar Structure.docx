@@ -1,0 +1,1184 @@
+ILPHOTX SHOP — SUPER ADMIN DASHBOARD
+Tugiye gutegura neza Super Admin Dashboard na Sidebar Structure ya ILPHOTX SHOP, dukoresheje architecture ya:
+- Next.js — Frontend na application routing.
+- PostgreSQL — Main database.
+- Prisma ORM — Database models na queries.
+- Redis — Caching, sessions, rate limiting, queues na real-time support.
+Intego ni ukugira Super Admin Dashboard isa n'iya professional e-commerce marketplace nka Amazon Seller Central cyangwa Alibaba Admin, ariko ikagira imiterere n'uburyo bwo gucunga ILPHOTX SHOP.
+
+Super Admin agomba kuba afite ubushobozi bwo kugenzura buri gice cya system: Users, Merchants, Products, Orders, Payments, Finance, Security, Staff, Reports na Global Settings.
+1. Dashboard layout
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+12
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Dashboard izaba igizwe n'ibice bitanu:
+1. Top Navbar: Search, notifications, messages, profile, quick actions.
+2. Main Sidebar: Navigation z'ingenzi.
+3. Sub Sidebar: Submenus zijyanye na navigation wahisemo.
+4. Main Content: Page iri gukorerwaho.
+5. Context Panel: Filters, date range, quick statistics cyangwa details bitewe na page.
+Uko page izaba iteye
+┌──────────────────────────────────────────────────────────────┐
+│ ILPHOTX SHOP     Search...       Notifications   Profile     │
+├──────────────┬───────────────────────────────────────────────┤
+│              │                                               │
+│ MAIN SIDEBAR │              MAIN CONTENT                     │
+│              │                                               │
+│ Dashboard    │   Welcome back, Super Admin                   │
+│ Users        │                                               │
+│ Merchants    │   ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐ │
+│ Products     │   │ Users  │ │ Shops  │ │ Orders │ │Revenue │ │
+│ Orders       │   └────────┘ └────────┘ └────────┘ └────────┘ │
+│ Payments     │                                               │
+│ Finance      │            Analytics Charts                   │
+│ Analytics    │                                               │
+│ Messages     │            Recent Activities                  │
+│ Security     │                                               │
+│ Settings     │                                               │
+│              │                                               │
+└──────────────┴───────────────────────────────────────────────┘
+
+
+Sidebar izajya igira uburyo bwo kuyifunga (collapsible), kugira ngo Main Content ibone umwanya munini.
+
+2. SUPER ADMIN — MAIN SIDEBAR NA SUB SIDEBARS
+Dore structure nyayo nakugira inama yo gukoresha. Buri section izagira submenu yayo, kandi buri submenu izaba ifite page yayo, table, filters, details na actions.
+2.1 Dashboard Overview
+Default landing page
+Iyo Super Admin akoze login, ahita ajya kuri /super-admin/dashboard.
+
+
+
+
+
+
+
+
+badavyapar.com
+
+
+Dashboard cards:
+Card	Amakuru igaragaza
+Total Users	Abantu bose biyandikishije
+Total Merchants	Abacuruzi bose
+Pending Merchants	Abacuruzi bategereje approval
+Total Customers	Abakiriya bose
+Total Products	Ibicuruzwa byose
+Pending Products	Ibicuruzwa bitegereje approval
+Total Orders	Orders zose
+Pending Payments	Ubwishyu butaremezwa
+Gross Sales	Amafaranga yose yagurishijweho
+Platform Revenue	Amafaranga platform yinjije
+Merchant Payouts	Amafaranga yishyuwe merchants
+Pending Payouts	Amafaranga ategereje kwishyurwa
+
+Charts:
+- Sales & Revenue Overview.
+- Orders Overview.
+- Merchant Registration Growth.
+- Customer Registration Growth.
+- Product Publication Statistics.
+- Payment Methods Distribution.
+- Top Selling Categories.
+- Top Performing Merchants.
+Dashboard tables:
+- Recent Orders.
+- Recent Merchant Registrations.
+- Recent Product Submissions.
+- Recent Payment Verification Requests.
+- Recent Security Activities.
+Quick Actions zizaba zirimo:
+- Add Admin.
+- View Pending Merchants.
+- Review Products.
+- Verify Payments.
+- Send Announcement.
+
+2.2 User Management
+MAIN SIDEBAR: User Management
+
+
+
+
+
+
+
+
+
+docs.turbo-ea.org
+
+
+Iyo ukanze User Management, sub-sidebar yayo izaba ifite:
+USER MANAGEMENT
+Sub-sidebar
+ All Users
+
+ Super Administrators
+
+ Administrators
+
+ Merchants
+
+ Customers
+
+ Staff Members
+
+ Pending Invitations
+
+ Roles & Permissions
+
+ Suspended Users
+
+ Inactive Users
+
+ Deleted / Archived Users
+
+
+Uko izajya ikora:
+- All Users: kureba abantu bose bari muri system.
+- Super Administrators: gucunga Super Admin accounts.
+- Administrators: kongeramo, guhindura no guhagarika Admin.
+- Merchants: kubona accounts z'abacuruzi.
+- Customers: kubona accounts z'abaguzi.
+- Staff Members: kubona abakozi ba merchants.
+- Pending Invitations: gukurikirana invitations zitarakirwa.
+- Roles & Permissions: gucunga roles na permissions.
+- Suspended Users: kubona abahagaritswe.
+- Inactive Users: kubona abatarimo gukora.
+- Deleted / Archived Users: kubona amakuru y'abahagaritswe cyangwa archived.
+Table columns:
+
+User ID, Full Name, Email, Phone, Role, Status, Registration Date, Last Login, Actions.
+
+Actions: View, Edit, Change Role, Suspend, Activate, Require 2FA, Send Announcement, Reset Password, Archive.
+
+Super Admin ni we wenyine ugomba kugira uburenganzira bwo guhindura global roles za users.
+
+2.3 Merchant Management
+MAIN SIDEBAR: Merchant Management
+
+
+
+
+
+
+
+
+
+omr.com
+
+
+MERCHANT MANAGEMENT
+Sub-sidebar
+ All Merchants
+
+ Pending Applications
+
+ Approved Merchants
+
+ Rejected Applications
+
+ Merchant Verification (KYC)
+
+ Business Information
+
+ Merchant Locations
+
+ Merchant Staff
+
+ Merchant Financial Profiles
+
+ Merchant Performance
+
+ Suspended Merchants
+
+
+Iyo Super Admin akanze Merchant runaka, azajya abona Merchant Details ifite tabs:
+1. Overview.
+2. Personal Information.
+3. Business Information.
+4. Shop Information.
+5. Location & Map.
+6. Products.
+7. Orders.
+8. Staff.
+9. Payments.
+10. Earnings & Settlements.
+11. Documents & Verification.
+12. Audit History.
+Merchant actions: Approve, Reject, Request More Information, Suspend, Activate, Edit, View Shop, View Staff.
+
+Ikintu cy'ingenzi: Approval igomba kugira verification history igaragaza uwemeje merchant, igihe yamwemeje n'impamvu.
+
+2.4 Product Management
+MAIN SIDEBAR: Product Management
+
+
+
+
+
+
+
+
+
+shadcnblocks.com
+
+
+PRODUCT MANAGEMENT
+Sub-sidebar
+ All Products
+
+ Pending Approval
+
+ Published Products
+
+ Scheduled Products
+
+ Draft Products
+
+ Rejected Products
+
+ Hidden Products
+
+ Out of Stock
+
+ Categories
+
+ Subcategories
+
+ Featured Products
+
+ Reported Products
+
+ Product Performance
+
+
+All Products table:
+- Product Image.
+- Product Name.
+- Merchant.
+- Category.
+- Price.
+- Stock.
+- Views.
+- Publication Status.
+- Date Added.
+- Actions.
+Super Admin azajya abasha kwemeza, kwanga, guhisha, gukuraho cyangwa gushyira product muri Featured.
+
+Categories na Subcategories bizajya bicungwa na Super Admin kugira ngo merchants badakora ibyiciro bidafite gahunda.
+
+2.5 Order Management
+MAIN SIDEBAR: Order Management
+
+
+
+
+
+
+
+
+
+dribbble.com
+
+
+ORDER MANAGEMENT
+Sub-sidebar
+ All Orders
+
+ New Orders
+
+ Pending Payments
+
+ Confirmed Orders
+
+ Processing Orders
+
+ Shipped Orders
+
+ Delivered Orders
+
+ Completed Orders
+
+ Cancelled Orders
+
+ Returns & Refund Requests
+
+ Disputes
+
+
+Iyo Super Admin afunguye order, azajya abona:
+- Order Number.
+- Customer Details.
+- Merchant Details.
+- Product Details.
+- Quantity.
+- Subtotal.
+- Tax.
+- Delivery Fee.
+- Total Amount.
+- Payment Status.
+- Delivery Status.
+- Order Timeline.
+- Payment Reference.
+Order igomba kuba ifite order items zitandukanye. Niba customer aguze ibicuruzwa ku bacuruzi batatu, system igomba kubasha kubicunga kuri order imwe ya customer ariko buri merchant akabona ibimureba gusa.
+
+2.6 Payment Management
+MAIN SIDEBAR: Payment Management
+
+
+
+
+
+
+
+
+
+pinelabs.com
+
+
+PAYMENT MANAGEMENT
+Sub-sidebar
+ Payment Overview
+
+ All Transactions
+
+ Pending Verification
+
+ Payment Proofs
+
+ Approved Payments
+
+ Rejected Payments
+
+ Bank Accounts
+
+ Mobile Money Accounts
+
+ Payment Methods
+
+ Tax Configuration
+
+ Payment Reversals
+
+ Payment Reports
+
+
+Payment Overview izajya igaragaza:
+- Total Payments.
+- Verified Payments.
+- Pending Payments.
+- Rejected Payments.
+- Failed Payments.
+- Total Amount Received.
+Payment Proof Verification:
+
+Super Admin cyangwa Admin ufite permission azajya afungura payment proof, agenzure:
+1. Customer name.
+2. Order number.
+3. Amount paid.
+4. Payment method.
+5. Transaction reference.
+6. Uploaded receipt.
+7. Bank/gateway confirmation.
+Hanyuma agire amahitamo ya Approve cyangwa Reject, ashyireho reason, maze system ibike uwakoze verification.
+
+Bank Accounts: Ni ho Super Admin azajya ashyiraho konti zikoreshwa mu kwishyurana, akazishyiraho currency, account name, account number, bank name na status.
+
+2.7 Finance & Settlements
+MAIN SIDEBAR: Finance & Settlements
+
+
+
+
+
+
+
+
+
+grzegorzhadala.com
+
+
+FINANCE & SETTLEMENTS
+Sub-sidebar
+ Financial Overview
+
+ Gross Sales
+
+ Platform Revenue
+
+ Platform Commissions
+
+ Merchant Earnings
+
+ Pending Settlements
+
+ Merchant Payouts
+
+ Completed Settlements
+
+ Refunds
+
+ Tax Reports
+
+ Financial Statements
+
+
+Iki gice kizajya kigenzura amafaranga yose, ariko tugomba gutandukanya:
+- Amafaranga umukiriya yishyuye.
+- Amafaranga ILPHOTX SHOP igomba gufata nka commission.
+- Amafaranga merchant agomba guhabwa.
+- Tax igomba kwishyurwa.
+- Amafaranga yateganyijwe gusubizwa.
+Settlement ntizemezwa gusa n'uko payment yemejwe; igomba kugenzura ko order yujuje ibisabwa byo kwishyurwa merchant.
+
+2.8 Analytics & Reports
+MAIN SIDEBAR: Analytics & Reports
+
+
+
+
+
+
+
+
+
+clearomni.com
+
+
+ANALYTICS & REPORTS
+Sub-sidebar
+ Sales Analytics
+
+ Revenue Analytics
+
+ Merchant Analytics
+
+ Customer Analytics
+
+ Product Analytics
+
+ Most Viewed Products
+
+ Best Selling Products
+
+ Category Performance
+
+ Geographic Analytics
+
+ Website Traffic
+
+ Generated Reports
+
+
+Reports zizajya zishobora gukururwa muri PDF, Excel na CSV, zifite date range filters na export permissions.
+
+2.9 Communication Center
+MAIN SIDEBAR: Communication Center
+
+
+
+
+
+
+
+
+
+dribbble.com
+
+
+COMMUNICATION CENTER
+Sub-sidebar
+ All Conversations
+
+ Customer Messages
+
+ Merchant Messages
+
+ Staff Conversations
+
+ Support Tickets
+
+ Live Chat
+
+ Announcements
+
+ Notifications
+
+ Email Campaigns
+
+ SMS Campaigns
+
+ Help Center
+
+
+Uko izajya ikora:
+- Customer Messages: Super Admin abona ibiganiro by'abakiriya.
+- Merchant Messages: abona ibiganiro by'abacuruzi.
+- Support Tickets: ibibazo byatanzwe n'abakiriya cyangwa merchants.
+- Live Chat: kuganira ako kanya.
+- Announcements: gutangaza amakuru mashya.
+- Notifications: kugenzura ubutumwa bwohererezwa users.
+- Email Campaigns: kohereza emails ku bantu batoranyijwe.
+- SMS Campaigns: kohereza ubutumwa kuri telephone.
+Announcement izajya igira audience:
+- All Users.
+- Merchants Only.
+- Customers Only.
+- Admins Only.
+- Specific Users.
+Azajya agena igihe itangirira, igihe irangirira, title, message na priority.
+2.10 Marketing & Promotions
+Iki gice ni ingenzi kugira ngo ILPHOTX SHOP ibashe gufasha abacuruzi kwamamaza ibicuruzwa byabo.
+MAIN SIDEBAR: Marketing & Promotions
+
+
+
+
+
+
+
+
+
+orderain.com
+
+
+MARKETING & PROMOTIONS
+Sub-sidebar
+ Coupons & Discount Codes
+
+ Discount Campaigns
+
+ Featured Products
+
+ Featured Merchants
+
+ Homepage Banners
+
+ Campaign Scheduling
+
+ Special Offers
+
+ Campaign Performance
+
+
+Super Admin azajya agena promotions zikorwa na platform yose, naho merchant akagira uburenganzira bwo gukora promotions kuri shop ye gusa, bitewe n'amategeko ya system.
+2.11 Delivery & Logistics
+MAIN SIDEBAR: Delivery & Logistics
+
+
+
+
+
+
+
+
+
+dribbble.com
+
+
+DELIVERY & LOGISTICS
+Sub-sidebar
+ Delivery Overview
+
+ All Shipments
+
+ Pending Deliveries
+
+ Delivery Tracking
+
+ Delivery Partners
+
+ Delivery Zones
+
+ Delivery Fees
+
+ Completed Deliveries
+
+ Delivery Issues
+
+
+Super Admin azajya areba uko ibicuruzwa byoherezwa, aho bigeze, uwabyoherereje, uwabitanze n'ibibazo byavutse.
+2.12 Reviews & Disputes
+MAIN SIDEBAR: Reviews & Disputes
+
+REVIEWS & DISPUTES
+Sub-sidebar
+ All Reviews
+
+ Pending Reviews
+
+ Reported Reviews
+
+ Customer Complaints
+
+ Open Disputes
+
+ Resolved Disputes
+
+ Closed Disputes
+
+
+Aha ni ho Super Admin azajya akemurira ibibazo by'abaguzi n'abacuruzi, agenzura ibimenyetso n'ibiganiro byabaye.
+2.13 Security & Audit Center
+MAIN SIDEBAR: Security & Audit
+
+
+
+
+
+
+
+
+
+cobaltsecurity.io
+
+
+SECURITY & AUDIT
+Sub-sidebar
+ All Audit Logs
+
+ Login History
+
+ Active Sessions
+
+ IP Address Monitoring
+
+ Failed Login Attempts
+
+ Security Alerts
+
+ Two-Factor Authentication
+
+ Password & Access Policies
+
+ Device Management
+
+ Security Reports
+
+
+All Audit Logs
+Iyi page izajya igira table ikurikira:
+Column	Icyo igaragaza
+User	Uwakoresheje system
+Role	Role ye
+Action	Icyo yakoze
+Module	Igice yakoreyemo
+IP Address	IP yakoresheje
+Device	Igikoresho
+Date & Time	Igihe
+Status	Success / Failed
+
+Iyo Super Admin akanze audit record, azajya abona:
+- User Details.
+- Action Description.
+- Old Values.
+- New Values.
+- IP Address.
+- Browser.
+- Device.
+- Request ID.
+- Timestamp.
+- Related Record.
+Icyitonderwa: Password, access tokens, secret keys n'amakuru y'ibanga ntibigomba kubikwa muri audit log. Audit log igomba kurindwa guhindurwa, kandi ibikorwa byo guhindura roles, kwemeza amafaranga no guhindura bank accounts bigire audit records zidasibika na Admin.
+2.14 System Settings
+Super Admin exclusive
+MAIN SIDEBAR: System Settings
+
+
+
+
+
+
+
+
+
+dribbble.com
+
+
+Iyi ni yo section izaba ifite configuration zose za platform.
+SYSTEM SETTINGS
+Exclusive access
+ General Settings
+
+ Appearance & Theme Settings
+
+ Branding & Logo
+
+ Typography Settings
+
+ Language & Localization
+
+ Currency Settings
+
+ Tax Configuration
+
+ Payment Configuration
+
+ Support Contact Settings
+
+ Email Configuration
+
+ SMS Configuration
+
+ Security Configuration
+
+ Merchant Registration Settings
+
+ Marketplace Settings
+
+ Delivery Configuration
+
+ Storage & Cache Settings
+
+ Maintenance Mode
+
+
+Appearance & Theme Settings
+Super Admin azajya ahindura:
+- Light Mode / Dark Mode.
+- Primary Color.
+- Secondary Color.
+- Sidebar Color.
+- Background Color.
+- Text Color.
+- Font Family.
+- Font Size.
+- Button Style.
+- Border Radius.
+Branding & Logo
+- System Name.
+- Main Logo.
+- Dark Logo.
+- Favicon.
+- Login Page Branding.
+- Email Logo.
+- Footer Information.
+Support Contact Settings
+- Support Phone Number.
+- Support Email.
+- WhatsApp.
+- Live Chat.
+- Support Working Hours.
+- Help Center URL.
+Marketplace Settings
+- Merchant Registration ON/OFF.
+- Product Approval Required.
+- Default Product Visibility.
+- Product Scheduling.
+- Customer Registration.
+- Product Expiration Rules.
+- Reviews & Ratings.
+- Shopping Cart Settings.
+Payment Configuration
+- Bank Accounts.
+- Mobile Money.
+- Payment Gateways.
+- Commission Rates.
+- Payment Verification Rules.
+- Settlement Schedule.
+- Refund Rules.
+Admin ashobora kubona settings yemerewe gusoma, ariko ntazabona uburenganzira bwo guhindura global configuration.
+2.15 System Monitoring & Maintenance
+MAIN SIDEBAR: System Monitoring
+
+SYSTEM MONITORING
+Sub-sidebar
+ System Health
+
+ Database Monitoring
+
+ Redis Monitoring
+
+ Server Performance
+
+ Storage Usage
+
+ Background Jobs
+
+ Application Errors
+
+ Database Backups
+
+ Backup History
+
+ Maintenance Tools
+
+
+Aha tuzajya dukurikirana:
+- PostgreSQL connection status.
+- Slow database queries.
+- Redis memory usage.
+- Redis connection status.
+- Failed background jobs.
+- Next.js application errors.
+- Storage consumption.
+- Backup success/failure.
+- API response performance.
+Ibi bizafasha kumenya ikibazo mbere y'uko abakoresha batangira kukibona.
+
+2.16 Profile & Account
+Iyi section izajya iba munsi ya sidebar, cyangwa igere kuri profile menu iri hejuru.
+MY ACCOUNT
+ My Profile
+
+ Change Password
+
+ My Security
+
+ My Devices & Sessions
+
+ Notification Preferences
+
+ Help & Support
+
+
+ Logout
+
+
+
+3. Sidebar yose mu buryo bwa hierarchy
+Dore structure nyayo nakoresha muri project kugira ngo nta section y'ingenzi isigara inyuma.
+Main Sidebar	Umubare wa Sub-pages
+Dashboard	1
+User Management	11
+Merchant Management	11
+Product Management	13
+Order Management	11
+Payment Management	12
+Finance & Settlements	12
+Analytics & Reports	12
+Communication Center	11
+Marketing & Promotions	8
+Delivery & Logistics	9
+Reviews & Disputes	7
+Security & Audit	10
+System Settings	17
+System Monitoring	10
+My Account	7
+
+Iyi ni navigation structure. Ntibisobanura ko buri submenu igomba kugira database table yayo; zimwe zizajya ziba views zitandukanye zikoresha tables zimwe.
+4. Uko tuzayishyira muri Next.js
+Kubera ko ukoresha Next.js, sinakugira inama yo gukora pages zose muri file imwe. Tuzakoresha App Router, layouts zitandukanye na reusable components.
+4.1 Folder structure
+src/
+│
+├── app/
+│   ├── (public)/
+│   │   ├── page.tsx
+│   │   ├── our-market/
+│   │   ├── product/[slug]/
+│   │   └── auth/
+│   │
+│   ├── super-admin/
+│   │   ├── layout.tsx
+│   │   ├── dashboard/
+│   │   ├── users/
+│   │   ├── merchants/
+│   │   ├── products/
+│   │   ├── orders/
+│   │   ├── payments/
+│   │   ├── finance/
+│   │   ├── analytics/
+│   │   ├── communication/
+│   │   ├── marketing/
+│   │   ├── delivery/
+│   │   ├── reviews-disputes/
+│   │   ├── security/
+│   │   ├── settings/
+│   │   ├── monitoring/
+│   │   └── profile/
+│   │
+│   ├── admin/
+│   ├── merchant/
+│   ├── customer/
+│   │
+│   └── api/
+│
+├── components/
+│   ├── super-admin/
+│   │   ├── SuperAdminSidebar.tsx
+│   │   ├── SuperAdminHeader.tsx
+│   │   ├── SuperAdminLayout.tsx
+│   │   ├── DashboardCards.tsx
+│   │   ├── AnalyticsCharts.tsx
+│   │   ├── DataTable.tsx
+│   │   └── ConfirmDialog.tsx
+│   │
+│   ├── shared/
+│   ├── forms/
+│   ├── tables/
+│   └── charts/
+│
+├── lib/
+│   ├── prisma.ts
+│   ├── redis.ts
+│   ├── auth.ts
+│   ├── permissions.ts
+│   ├── audit.ts
+│   └── validations.ts
+│
+├── services/
+│   ├── user.service.ts
+│   ├── merchant.service.ts
+│   ├── product.service.ts
+│   ├── order.service.ts
+│   ├── payment.service.ts
+│   └── finance.service.ts
+│
+├── hooks/
+├── types/
+└── config/
+    └── navigation.ts
+
+prisma/
+├── schema.prisma
+└── migrations/
+
+
+4.2 Uko sub-sidebar izajya ikora
+Tuzakoresha navigation hierarchy aho ukanze Main Sidebar igafungura submenu ijyanye na yo.
+
+Urugero:
+ILPHOTX SHOP
+SUPER ADMIN
+
+
+User Management
+
+
+All Users
+
+Administrators
+
+Merchants
+
+Customers
+
+Roles & Permissions
+
+
+Products
+
+
+All Products
+
+Pending Approval
+
+Published
+
+Scheduled
+
+Categories
+
+
+
+Urugero rw'uko navigation ibiri itandukanye izajya igaragazwa muri layout. Mu system nyayo, menu wahisemo ni yo izajya iba active.
+
+Amategeko y'imikorere:
+- Main Sidebar igaragaza sections zose.
+- Iyo ukanze section, submenu yayo irafunguka.
+- Iyo ukanze submenu, page yayo irafunguka.
+- Active page igira background color itandukanye.
+- Refresh page ntisenya navigation.
+- URL ihinduka uko page ihinduka.
+- Sidebar ishobora gufungwa kuri desktop.
+- Kuri mobile, sidebar ijya muri drawer.
+- Super Admin ashobora kubona navigation zose.
+Tuzakoresha URL structure nka:
+/super-admin/dashboard
+
+/super-admin/users
+/super-admin/users/administrators
+/super-admin/users/merchants
+/super-admin/users/roles
+
+/super-admin/merchants
+/super-admin/merchants/pending
+/super-admin/merchants/approved
+
+/super-admin/products
+/super-admin/products/pending
+/super-admin/products/categories
+
+/super-admin/orders
+/super-admin/orders/pending
+
+/super-admin/payments
+/super-admin/payments/verification
+
+/super-admin/finance
+/super-admin/finance/settlements
+
+/super-admin/security/audit-logs
+
+/super-admin/settings/general
+/super-admin/settings/appearance
+/super-admin/settings/payments
+
+
+5. Uko PostgreSQL, Prisma na Redis bizakorana
+Next.js App Router
+
+Dashboard, layouts, pages, server components
+
+Authentication & Authorization
+
+Session validation, RBAC, permissions
+
+PostgreSQL
+
+Permanent records
+
+
+Redis
+
+Cache & queues
+
+
+
+Prisma ikoreshwa na Next.js services mu gusoma no kwandika amakuru muri PostgreSQL.
+
+PostgreSQL na Prisma
+Tuzagira models z'ingenzi:
+- User
+- Role
+- Permission
+- UserRole
+- RolePermission
+- MerchantProfile
+- Shop
+- MerchantStaff
+- StaffInvitation
+- Product
+- ProductImage
+- Category
+- Order
+- OrderItem
+- Payment
+- PaymentProof
+- BankAccount
+- MerchantEarning
+- Settlement
+- Conversation
+- Message
+- Notification
+- Announcement
+- AuditLog
+- SystemSetting
+- UserSetting
+- Review
+- Refund
+- Delivery.
+Redis
+Redis izakoreshwa mu:
+1. Dashboard caching.
+2. Rate limiting.
+3. Session management.
+4. Background jobs.
+5. Scheduled product publishing.
+6. Notification queues.
+7. Temporary verification codes.
+8. Frequently accessed categories.
+Icy'ingenzi: Redis ntabwo izaba ari yo ibika amakuru y'ingenzi y'amafaranga cyangwa audit logs burundu. PostgreSQL ni yo izaba source of truth.
+6. Uburyo bwo kurinda Super Admin
+Kubera ko Super Admin ashobora guhindura buri kintu, tugomba kugira security ikomeye.
+Security feature	Uko izakora
+RBAC	Kugenzura roles na permissions
+2FA	Kwemeza login mu byiciro bibiri
+Session Management	Kugenzura devices zinjiye
+Audit Logs	Kubika ibikorwa byose
+Rate Limiting	Kurinda login abuse
+IP Monitoring	Gukurikirana IP
+Password Hashing	Kurinda passwords
+Sensitive Action Confirmation	Kwemeza ibikorwa bikomeye
+Backup	Kurinda amakuru
+Approval Workflow	Kugenzura ibikorwa by'amafaranga
+
+Global Settings, bank account changes, role changes na settlement approvals bizajya bisaba re-authentication cyangwa 2FA bitewe n'uburemere bw'igikorwa.
+
+7. Umwanzuro: Structure tuzajya dukurikiza
+ILPHOTX SHOP
+SUPER ADMIN CONTROL CENTER
+
+16
+Main navigation groups
+
+150+
+Potential submenu pages and views
+
+
+
+Technology
+Next.js
+Prisma
+PostgreSQL
+Redis
+
+Architecture principles
+- Multi-vendor architecture.
+- Role-based access control.
+- Modular navigation.
+- Centralized system settings.
+- Secure payment verification.
+- Full audit trail.
+- Scalable database and caching.
+
+8. Icyo nakugira inama yo gukurikizaho
+Ndasaba ko tutahita dutangira gukora pages 150 icyarimwe. Tubanze dukore Super Admin Dashboard Foundation neza, kuko ari yo izaba template y'ibindi bice byose.
+
+Ibyo tuzabanza gukora ni:
+1. Super Admin Layout.
+2. Main Sidebar yuzuye.
+3. Dynamic Sub-sidebar.
+4. Top Navbar.
+5. Dashboard Overview.
+6. Navigation routing.
+7. Responsive design.
+8. Authentication na permission protection.
+Nyuma y'ibyo tuzajya twubaka buri module ukwawo.
+
+Icyemezo cy'ingenzi: Super Admin na Admin ntibagomba gusangira permissions imwe. Super Admin agira full system access; Admin akagira operational permissions yahawe, ariko ntahindure global settings cyangwa system ownership.
+
+Iyi ni yo structure nakugira inama yo gufata nk'ishingiro rya ILPHOTX SHOP mbere yo gutangira gukora code.
+
+
+
+urasabwa kujya ushyiramo amacard ahoakenewe kandi amezeneza  akagaragara neza   hejuru ,kandi nahakenewe chart ugakoresha ayuruziga ahobiringobwa ndetse nahagaze  kugirango ajye agaragaza ibintuneza ,ugakora design yaburi page ikaba imezeneza , kandi ugakora system idafite akajagariki ,isaneza ,kandi ntushyiremo ibisobanturo bidakenewe  ukoreshe ibifite umumaro gusa ,kandi system ibe ifite security ,ikindi ibe iri responsive
+
+kandi kuri buri table hazajya haba hariho action iroho akajijo ka view Iyo ukanzeho uhita ubona byose  nibitagaragaye muritable  kandi bikaza biri kuri page imezeneza ifite design itiho logo ya system +name of system   na page ifite amabara neza ya system kandi hasi hari qrcode    byose bimezeneza ,harinakandi kantu kadesign kagaragaza download  kuburyo ushobora guhta ukora download pdf imezeneza igararaza ibyo byose nkuko wakoze view ukabibona ,hakazaho nindi design ya share imezeneza kuburyo umuntu ashobora guhita akora share yiyo pdf imezeneza   igaragara Iyo record neza
+

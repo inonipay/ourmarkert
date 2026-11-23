@@ -1,0 +1,804 @@
+# GLOBAL UI/UX DESIGN SYSTEM — STRICT AI INSTRUCTIONS
+
+## 1. YOUR ROLE
+
+Act as a Senior UI/UX Designer, Senior Frontend Developer and Design System Architect.
+
+Your responsibility is to build a modern, professional, responsive and consistent web application.
+
+Every page, dashboard, sidebar, navigation, form, table, modal, card, button and component MUST follow the same global design system.
+
+Use a modern technology e-commerce inspired visual identity similar to Nyereka Tech:
+- Clean white surfaces.
+- Professional blue branding.
+- Dark navy navigation and strong sections.
+- Orange accents for important highlights.
+- Light gray backgrounds.
+- Consistent spacing, typography, borders and shadows.
+
+Do not randomly introduce new colors or change the established design.
+
+IMPORTANT:
+The color values below are the official design tokens for THIS PROJECT. They are not claimed to be the exact internal colors of Nyereka Tech.
+
+---
+
+# 2. GLOBAL COLOR SYSTEM
+
+Use these colors throughout the entire application.
+
+## A. Brand Colors
+
+| Color Name | HEX | Purpose |
+|---|---|---|
+| Primary Blue | #1465B8 | Main brand, primary buttons, links |
+| Dark Navy | #0B3B70 | Sidebar, dark headers, footer |
+| Light Blue | #E8F1FB | Selected menu backgrounds, highlights |
+| Blue Hover | #10549A | Hover states |
+| Orange Accent | #F5A623 | Important highlights and promotions |
+| Orange Light | #FFF4DE | Warning backgrounds and highlights |
+
+## B. Background Colors
+
+| Color Name | HEX | Purpose |
+|---|---|---|
+| Main Background | #F5F7FA | Main dashboard background |
+| White Surface | #FFFFFF | Cards, forms, modals |
+| Section Background | #F0F4F8 | Secondary sections |
+| Input Background | #FFFFFF | Form inputs |
+| Hover Background | #F1F5F9 | Hovered rows and menu items |
+
+## C. Typography Colors
+
+| Color Name | HEX | Purpose |
+|---|---|---|
+| Main Text | #252F3F | Titles and important text |
+| Secondary Text | #667085 | Descriptions |
+| Muted Text | #98A2B3 | Placeholders and disabled text |
+| White Text | #FFFFFF | Text on dark backgrounds |
+| Link Text | #1465B8 | Clickable links |
+
+## D. Status Colors
+
+Status colors MUST have consistent meanings everywhere.
+
+| Status | HEX | Usage |
+|---|---|---|
+| Success Green | #16A36A | Completed, approved, active |
+| Success Light | #E8F7EF | Success backgrounds |
+| Danger Red | #DC3545 | Failed, rejected, errors |
+| Danger Light | #FDECEE | Error backgrounds |
+| Warning Orange | #F4B740 | Pending, awaiting approval |
+| Warning Light | #FFF5DF | Pending backgrounds |
+| Info Blue | #1465B8 | Information and processing |
+| Info Light | #E8F1FB | Informational backgrounds |
+| Neutral Gray | #667085 | Draft, inactive, unknown |
+| Neutral Light | #F2F4F7 | Neutral backgrounds |
+
+NEVER use green to mean pending.
+NEVER use red to mean successful.
+NEVER use orange as the main brand color.
+NEVER use status colors randomly.
+
+---
+
+# 3. COLOR USAGE RULES
+
+Follow this color distribution:
+
+- 70% White and Light Gray.
+- 20% Blue and Navy.
+- 10% Orange and other accent colors.
+
+Primary Blue is for:
+- Main action buttons.
+- Links.
+- Active navigation indicators.
+- Important icons.
+- Selected tabs.
+- Primary actions.
+
+Dark Navy is for:
+- Main sidebar.
+- Dark navigation areas.
+- Footer.
+- Dark section headers.
+
+Orange is ONLY for:
+- Special highlights.
+- Important announcements.
+- Promotional elements.
+- Pending status.
+- Secondary attention indicators.
+
+Green is ONLY for:
+- Successful operations.
+- Approved records.
+- Completed payments.
+- Active or verified states where appropriate.
+
+Red is ONLY for:
+- Errors.
+- Failed operations.
+- Rejections.
+- Destructive actions.
+- Security warnings.
+
+White and Light Gray are for:
+- Main surfaces.
+- Dashboard backgrounds.
+- Tables.
+- Cards.
+- Forms.
+
+---
+
+# 4. GLOBAL DESIGN TOKENS
+
+Create a centralized CSS variable system.
+
+Use these variables instead of hardcoding colors in individual components.
+
+:root {
+  --primary: #1465B8;
+  --primary-hover: #10549A;
+  --primary-dark: #0B3B70;
+  --primary-light: #E8F1FB;
+
+  --accent: #F5A623;
+  --accent-light: #FFF4DE;
+
+  --success: #16A36A;
+  --success-light: #E8F7EF;
+
+  --danger: #DC3545;
+  --danger-light: #FDECEE;
+
+  --warning: #F4B740;
+  --warning-light: #FFF5DF;
+
+  --info: #1465B8;
+  --info-light: #E8F1FB;
+
+  --background: #F5F7FA;
+  --surface: #FFFFFF;
+  --surface-secondary: #F0F4F8;
+
+  --text-primary: #252F3F;
+  --text-secondary: #667085;
+  --text-muted: #98A2B3;
+
+  --border: #E4E7EC;
+  --sidebar-bg: #0B3B70;
+  --sidebar-text: #DCEBFA;
+  --sidebar-active: #1465B8;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+
+  --shadow-sm: 0 1px 3px rgba(16,24,40,0.06);
+  --shadow-md: 0 4px 12px rgba(16,24,40,0.08);
+  --shadow-lg: 0 10px 30px rgba(16,24,40,0.10);
+
+  --sidebar-width: 260px;
+  --sidebar-collapsed-width: 76px;
+  --header-height: 70px;
+}
+
+Every component MUST use these global tokens.
+
+Do not create duplicate or conflicting color variables.
+
+---
+
+# 5. GLOBAL APPLICATION LAYOUT
+
+All authenticated dashboards MUST follow this layout:
+
+1. Sidebar on the left.
+2. Top navigation/header.
+3. Main content area.
+4. Breadcrumb navigation.
+5. Page title and description.
+6. Page actions.
+7. Dashboard cards or page content.
+8. Tables, charts and other content.
+9. Footer where appropriate.
+
+The layout MUST remain consistent across all dashboards.
+
+The application should look like one integrated professional product, not separate websites.
+
+---
+
+# 6. SIDEBAR DESIGN
+
+Create a professional dark navy sidebar.
+
+Sidebar background:
+#0B3B70
+
+Sidebar text:
+#DCEBFA
+
+Sidebar width:
+260px expanded.
+76px collapsed.
+
+Sidebar structure:
+
+A. TOP BRAND AREA
+- Display company logo.
+- Display company/system name.
+- Use white branding.
+- Add collapse/expand button.
+
+B. MAIN NAVIGATION
+- Dashboard.
+- Management.
+- Operations.
+- Financial Management.
+- Reports.
+- Settings.
+
+C. NAVIGATION ITEMS
+Each navigation item MUST contain:
+- Consistent Lucide icon.
+- Label.
+- Optional submenu arrow.
+- Optional notification badge.
+
+D. ACTIVE NAVIGATION
+
+When a menu item is active:
+- Background: #1465B8.
+- Text: #FFFFFF.
+- Icon: #FFFFFF.
+- Border radius: 8px.
+- Add a subtle active indicator on the left.
+
+E. HOVER NAVIGATION
+
+On hover:
+- Background: rgba(255,255,255,0.10).
+- Text: #FFFFFF.
+- Icon: #FFFFFF.
+- Smooth transition.
+
+F. INACTIVE NAVIGATION
+
+- Background: transparent.
+- Text: #DCEBFA.
+- Icon: #DCEBFA.
+
+G. SUBNAVIGATION
+
+Submenus MUST:
+- Appear directly below their parent menu.
+- Have a small left indentation.
+- Use smaller consistent icons.
+- Clearly indicate the currently selected page.
+- Expand and collapse smoothly.
+
+H. SIDEBAR FOOTER
+
+Display:
+- Logged-in user profile.
+- User role.
+- Profile settings.
+- Logout.
+
+Logout must use a danger style only when appropriate.
+
+Do not use a completely different sidebar design for every dashboard.
+
+Only navigation items and role-specific permissions should change.
+
+---
+
+# 7. TOP NAVIGATION / HEADER
+
+Every dashboard MUST have a consistent top header.
+
+Header background:
+#FFFFFF
+
+Header height:
+70px.
+
+Header layout:
+
+LEFT:
+- Sidebar toggle button.
+- Breadcrumb navigation.
+- Current page title where appropriate.
+
+RIGHT:
+- Global search.
+- Notification bell.
+- Help icon.
+- User profile avatar.
+- User name.
+- Role label.
+- Profile dropdown.
+
+Header border:
+#E4E7EC
+
+Header shadow:
+Very subtle.
+
+Notification badges:
+Use orange for unread notification counts.
+
+User dropdown:
+- White background.
+- Rounded corners.
+- Subtle shadow.
+- Profile.
+- Account settings.
+- Security.
+- Logout.
+
+Make the header responsive on mobile.
+
+---
+
+# 8. SUBNAVIGATION DESIGN
+
+When a sidebar parent is selected, show its child pages.
+
+Example:
+
+FINANCIAL MANAGEMENT
+
+- Overview
+- Transactions
+- Payment Requests
+- Payment Links
+- Invoices
+- Settlements
+- Refunds
+- Disputes
+- Financial Reports
+
+Each child page must have:
+- Consistent icon.
+- Clear label.
+- Active state.
+- Hover state.
+- Permission-based visibility.
+
+Use the same color system as the main sidebar.
+
+Never make subnavigation use unrelated colors.
+
+---
+
+# 9. DASHBOARD DESIGN
+
+Every dashboard MUST use the same visual architecture.
+
+However, dashboard content must depend on the logged-in user's role.
+
+A. DASHBOARD HEADER
+
+Display:
+- Welcome message.
+- User name.
+- Current role.
+- Date or selected date range.
+- Refresh action where appropriate.
+
+B. KPI CARDS
+
+Display important metrics in clean white cards.
+
+Card design:
+- White background.
+- Border: #E4E7EC.
+- Border radius: 14px.
+- Subtle shadow.
+- Padding: 20px.
+- Consistent height.
+- Responsive grid.
+
+Each card contains:
+- Icon.
+- Metric title.
+- Large numerical value.
+- Percentage change if available.
+- Small descriptive text.
+
+Use blue as the main icon color.
+
+Use green for positive performance.
+
+Use red for negative performance.
+
+Use orange for pending indicators.
+
+Do not make every card a different color.
+
+C. CHARTS
+
+Use:
+- Blue for primary data.
+- Green for successful results.
+- Orange for pending results.
+- Red for failed results.
+- Gray for neutral comparisons.
+
+Chart backgrounds MUST remain white.
+
+Charts must have:
+- Clear titles.
+- Legends.
+- Tooltips.
+- Readable axes.
+- Responsive sizing.
+
+D. RECENT ACTIVITY
+
+Use clean tables and activity lists.
+
+E. QUICK ACTIONS
+
+Use primary blue buttons for the main actions.
+
+---
+
+# 10. TABLE DESIGN
+
+Every data table MUST follow the same design.
+
+Table header:
+- Background: #F5F7FA.
+- Text: #667085.
+- Font weight: 600.
+
+Table body:
+- Background: #FFFFFF.
+- Text: #252F3F.
+- Border bottom: #E4E7EC.
+
+Row hover:
+- Background: #F5F7FA.
+
+Table features:
+- Search.
+- Filters.
+- Pagination.
+- Sorting.
+- Column visibility where appropriate.
+- Export actions.
+- Responsive horizontal scrolling.
+
+Status badges:
+
+Approved = Green.
+Completed = Green.
+Active = Green.
+Pending = Orange.
+Processing = Blue.
+Failed = Red.
+Rejected = Red.
+Inactive = Gray.
+Draft = Gray.
+
+Never display all status badges with the same color.
+
+---
+
+# 11. BUTTON DESIGN
+
+PRIMARY BUTTON:
+- Background: #1465B8.
+- Text: #FFFFFF.
+- Hover: #10549A.
+
+SECONDARY BUTTON:
+- Background: #FFFFFF.
+- Text: #1465B8.
+- Border: #1465B8.
+
+SUCCESS BUTTON:
+- Background: #16A36A.
+- Text: #FFFFFF.
+
+DANGER BUTTON:
+- Background: #DC3545.
+- Text: #FFFFFF.
+
+WARNING BUTTON:
+- Background: #F4B740.
+- Text: #252F3F.
+
+GHOST BUTTON:
+- Background: transparent.
+- Text: #1465B8.
+
+All buttons MUST:
+- Have consistent heights.
+- Have rounded corners.
+- Include icons only where useful.
+- Have hover and disabled states.
+- Show loading states when processing.
+- Have accessible labels.
+
+Use destructive confirmation dialogs before important deletions or irreversible operations.
+
+---
+
+# 12. FORMS AND INPUT FIELDS
+
+Every form MUST have:
+- Clear field labels.
+- White input background.
+- Border: #E4E7EC.
+- Text: #252F3F.
+- Placeholder: #98A2B3.
+- Focus border: #1465B8.
+- Focus ring: rgba(20,101,184,0.15).
+- Consistent spacing.
+
+Error:
+- Red border.
+- Red error message.
+
+Success:
+- Green confirmation message.
+
+Disabled:
+- Gray background.
+- Muted text.
+
+Organize large forms into:
+- Sections.
+- Cards.
+- Clear headings.
+- Logical field groups.
+
+---
+
+# 13. MODALS AND DRAWERS
+
+Use white surfaces.
+
+Modal:
+- Rounded corners.
+- Subtle shadow.
+- Dark readable heading.
+- Clear description.
+- Consistent action buttons.
+
+Danger confirmations must use red for the destructive action.
+
+Drawers must be responsive and must not cover important navigation controls unnecessarily.
+
+---
+
+# 14. ROLE-BASED DASHBOARD CONSISTENCY
+
+When building multiple dashboards:
+
+SUPER ADMIN:
+- Global platform overview.
+- System statistics.
+- Users.
+- Merchants.
+- Financial operations.
+- Platform settings.
+- Security and monitoring.
+
+ADMIN:
+- Organization-level overview.
+- Users and operational management.
+- Reports.
+- Approved administrative actions.
+
+MERCHANT:
+- Merchant overview.
+- Payment collection.
+- Transactions.
+- Payment requests.
+- Invoices.
+- Settlements.
+- Merchant staff.
+
+ACCOUNTANT:
+- Financial overview.
+- Transactions.
+- Reconciliation.
+- Settlements.
+- Financial reports.
+
+CASHIER:
+- Payment collection.
+- Payment verification.
+- Payment history.
+- Daily transaction records.
+
+Each role MUST only see the pages and actions permitted to that role.
+
+Do not expose unauthorized navigation links or operations.
+
+Use backend authorization as the actual security boundary. Hiding a menu item alone is NOT security.
+
+All dashboards MUST share:
+- The same brand colors.
+- The same typography.
+- The same header.
+- The same sidebar architecture.
+- The same card design.
+- The same table design.
+- The same button styles.
+- The same responsive rules.
+
+Only the navigation structure, permissions and dashboard information should differ by role.
+
+---
+
+# 15. RESPONSIVE DESIGN
+
+Desktop:
+- Full sidebar.
+- Full header.
+- Multi-column dashboard cards.
+
+Tablet:
+- Collapsible sidebar.
+- Adapted card grid.
+- Responsive tables.
+
+Mobile:
+- Sidebar becomes a slide-out drawer.
+- Header becomes compact.
+- Cards stack vertically.
+- Forms become single-column.
+- Buttons become appropriately sized.
+- Tables support horizontal scrolling or mobile-friendly layouts.
+
+Never allow horizontal page overflow.
+
+---
+
+# 16. ICONOGRAPHY
+
+Use Lucide React icons.
+
+Examples:
+- LayoutDashboard
+- Users
+- Settings
+- CreditCard
+- Wallet
+- Receipt
+- FileText
+- ChartNoAxesCombined
+- Bell
+- Search
+- ShieldCheck
+- Menu
+- ChevronDown
+- ChevronRight
+- LogOut
+
+Keep icon sizes consistent.
+
+Sidebar icons: 20px.
+Button icons: 16–18px.
+Dashboard card icons: 22–26px.
+
+Do not mix random icon libraries.
+
+---
+
+# 17. TYPOGRAPHY
+
+Use Inter as the preferred font.
+
+Typography hierarchy:
+
+Main page title: 24–30px, bold.
+Section title: 18–20px, semibold.
+Card title: 13–15px.
+Body text: 14–16px.
+Table text: 13–14px.
+Small descriptions: 12–13px.
+
+Use consistent line heights.
+
+Avoid unnecessarily large text.
+
+---
+
+# 18. TECHNICAL IMPLEMENTATION RULES
+
+1. Use reusable React components.
+2. Use centralized CSS variables or Tailwind theme tokens.
+3. Do not hardcode unrelated colors in individual pages.
+4. Create reusable Sidebar, Header, DashboardLayout, StatCard, DataTable, StatusBadge, Modal and FormField components.
+5. Keep role-based navigation configuration separate from UI components.
+6. Use consistent spacing and design tokens.
+7. Do not duplicate the same design logic in multiple dashboards.
+8. Maintain the existing project architecture.
+9. Do not remove existing functionality while redesigning the UI.
+10. Maintain API integration and backend functionality.
+11. Do not replace real data with fake data in production pages.
+12. Add proper loading, error, empty and success states.
+13. Ensure accessibility and keyboard navigation.
+14. Test all routes after making changes.
+
+If Tailwind CSS is used, map the project color tokens into the existing Tailwind theme configuration rather than inventing a second palette.
+
+If standard CSS is used, use the global CSS variables defined above.
+
+---
+
+# 19. STRICT DESIGN CONSISTENCY RULES
+
+These rules are mandatory:
+
+- NEVER randomly change the brand colors.
+- NEVER create a new sidebar color for an individual dashboard.
+- NEVER use different button designs on different pages.
+- NEVER use inconsistent border radiuses.
+- NEVER mix unrelated design systems.
+- NEVER make all cards brightly colored.
+- NEVER use orange as the main background of the entire application.
+- NEVER use red for ordinary navigation.
+- NEVER use green for every successful-looking component without checking its meaning.
+- NEVER introduce unnecessary gradients.
+- NEVER create visually crowded dashboards.
+- NEVER use inconsistent spacing.
+
+When adding a new feature, first inspect existing components and reuse them.
+
+When redesigning an existing page, preserve its business logic and data flow.
+
+---
+
+# 20. AI EXECUTION WORKFLOW
+
+Before implementing any new page or feature:
+
+STEP 1:
+Inspect the existing project structure.
+
+STEP 2:
+Inspect existing global CSS variables, Tailwind configuration and reusable components.
+
+STEP 3:
+Identify the dashboard role and page navigation structure.
+
+STEP 4:
+Apply the established global color palette.
+
+STEP 5:
+Reuse existing sidebar, header, cards, tables and buttons.
+
+STEP 6:
+Implement the new page using the same design system.
+
+STEP 7:
+Check responsiveness on desktop, tablet and mobile.
+
+STEP 8:
+Check all navigation links, buttons, dropdowns, forms and interactions.
+
+STEP 9:
+Run the relevant tests and resolve errors.
+
+STEP 10:
+Verify that no new conflicting colors or duplicate design systems have been introduced.
+
+FINAL REQUIREMENT:
+
+Every page in this project must look like it belongs to ONE professional, unified software platform.
+
+The user must recognize the same brand identity whether they open Super Admin, Admin, Merchant, customer, 
+
+Follow this design system for every future UI implementation unless the project owner explicitly changes it.
